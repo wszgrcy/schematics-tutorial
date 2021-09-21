@@ -3,6 +3,10 @@
         "hello-world": {
             "factory": "./hello-world",
             "description": "hello-world"
+        },
+        "template": {
+            "factory": "./template",
+            "description": "template"
         }
     }
 }

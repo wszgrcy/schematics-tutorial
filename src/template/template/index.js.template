@@ -1,0 +1,10 @@
+console.log('hello world')
+<%= getCode('ceshi') %>
+<% if(inputValue){%>
+打印1
+<%}else{%>
+打印2
+<%}%>
+<%=value %>
+<%-value %>
+<%# value %>
