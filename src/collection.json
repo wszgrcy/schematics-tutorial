@@ -1,0 +1,8 @@
+{
+    "schematics": {
+        "hello-world": {
+            "factory": "./hello-world",
+            "description": "hello-world"
+        }
+    }
+}

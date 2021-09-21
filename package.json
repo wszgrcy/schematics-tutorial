@@ -1,0 +1,25 @@
+{
+  "name": "schematics-tutorial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "@angular-devkit/schematics": "^12.2.6",
+    "typescript": "^4.4.3"
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wszgrcy/schematics-tutorial.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wszgrcy/schematics-tutorial/issues"
+  },
+  "homepage": "https://github.com/wszgrcy/schematics-tutorial#readme",
+  "schematics": "./src/collection"
+}
