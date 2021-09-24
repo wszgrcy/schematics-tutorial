@@ -7,6 +7,11 @@
         "template": {
             "factory": "./template",
             "description": "template"
+        },
+        "hint": {
+            "factory": "./hint",
+            "description": "hint",
+            "schema":"./hint/schema.json"
         }
     }
 }

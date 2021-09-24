@@ -1,0 +1,61 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "HintType",
+    "properties": {
+        "string1": {
+            "type": "string",
+            "description": "string类型",
+            "$default": {
+                "$source": "argv",
+                "index": 0
+            },
+            "x-prompt": "请输入string"
+        },
+        "number1": {
+            "type": "number",
+            "description": "number类型",
+            "maximum": 100,
+            "minimum": 0,
+            "x-prompt": {
+                "type": "number",
+                "message": "请输入number类型"
+            },
+            "alias":"n"
+        },
+        "boolean1": {
+            "type": "boolean",
+            "description": "boolean类型",
+            "default": false,
+            "x-prompt": {
+                "type": "confirm",
+                "message": "判断"
+            },
+            "alias":"b"
+        },
+        "multi-value": {
+            "type": "number",
+            "description": "string类型",
+
+            "x-prompt": {
+                "type": "list",
+                "items": [
+                    {
+                        "value": 1,
+                        "label": "1"
+                    },
+                    {
+                        "value": 2,
+                        "label": "2"
+                    },
+                    {
+                        "value": 3,
+                        "label": "3"
+                    }
+                ],
+                "message": "选择数组"
+            },
+            "x-deprecated": "字段废弃"
+        }
+    },
+    "required":["string1"]
+}
