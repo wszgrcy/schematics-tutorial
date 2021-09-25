@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "@types/node": "^16.10.0",
     "dtsgenerator": "^3.13.0"
   },
   "devDependencies": {

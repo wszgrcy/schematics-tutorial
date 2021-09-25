@@ -12,6 +12,10 @@
             "factory": "./hint",
             "description": "hint",
             "schema":"./hint/schema.json"
+        },
+        "file-action":{
+            "factory":"./file-action",
+            "description":"file"
         }
     }
 }
