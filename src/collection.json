@@ -11,11 +11,15 @@
         "hint": {
             "factory": "./hint",
             "description": "hint",
-            "schema":"./hint/schema.json"
+            "schema": "./hint/schema.json"
         },
-        "file-action":{
-            "factory":"./file-action",
-            "description":"file"
+        "file-action": {
+            "factory": "./file-action",
+            "description": "file"
+        },
+        "syntax-demo": {
+            "factory": "./syntax-demo",
+            "description": "syntax-demo"
         }
     }
 }
