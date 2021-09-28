@@ -20,6 +20,10 @@
         "syntax-demo": {
             "factory": "./syntax-demo",
             "description": "syntax-demo"
+        },
+        "unit-demo": {
+            "factory": "./unit-demo",
+            "description": "unit-demo"
         }
     }
 }
