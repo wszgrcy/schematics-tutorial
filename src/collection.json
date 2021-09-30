@@ -24,6 +24,10 @@
         "unit-demo": {
             "factory": "./unit-demo",
             "description": "unit-demo"
+        },
+        "context-demo": {
+            "factory": "./context-demo",
+            "description": "context-demo"
         }
     }
 }
