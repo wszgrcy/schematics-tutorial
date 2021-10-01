@@ -28,6 +28,10 @@
         "context-demo": {
             "factory": "./context-demo",
             "description": "context-demo"
+        },
+        "angular-demo": {
+            "factory": "./angular-demo",
+            "description": "angular-demo"
         }
     }
 }

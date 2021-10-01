@@ -12,10 +12,11 @@
     "dtsgenerator": "^3.13.0",
     "jest": "^27.2.2",
     "jsonc-parser": "^3.0.0",
-    "ts-jest": "^27.0.5"
+    "ts-jest": "^27.0.5",
+    "@schematics/angular": "12.2.7"
   },
   "devDependencies": {
-    "@angular-devkit/schematics": "^12.2.6",
+    "@angular-devkit/schematics": "^12.2.7",
     "@types/jasmine": "^3.9.1",
     "jasmine": "^3.9.0",
     "ts-node": "^10.2.1",
@@ -24,7 +25,7 @@
   "scripts": {
     "build": "tsc",
     "test-jasmine": "ts-node ./node_modules/jasmine/bin/jasmine",
-    "test-jest":"jest"
+    "test-jest": "jest"
   },
   "repository": {
     "type": "git",
