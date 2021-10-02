@@ -32,6 +32,16 @@
         "angular-demo": {
             "factory": "./angular-demo",
             "description": "angular-demo"
+        },
+        "ng-new": {
+            "factory": "./ng-new",
+            "description": "ng-new",
+            "schema": "./ng-new/schema.json"
+        },
+        "ng-add": {
+            "factory": "./ng-add",
+            "description": "ng-add",
+            "schema": "./ng-add/schema.json"
         }
     }
 }
