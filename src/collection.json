@@ -42,6 +42,10 @@
             "factory": "./ng-add",
             "description": "ng-add",
             "schema": "./ng-add/schema.json"
+        },
+        "hint2": {
+            "factory": "./hint2",
+            "description": "hint2"
         }
     }
 }
