@@ -46,6 +46,10 @@
         "hint2": {
             "factory": "./hint2",
             "description": "hint2"
+        },
+        "rule2": {
+            "factory": "./rule2",
+            "description": "rule2"
         }
     }
 }
