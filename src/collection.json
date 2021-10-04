@@ -8,6 +8,10 @@
             "factory": "./template",
             "description": "template"
         },
+        "template2": {
+            "factory": "./template2",
+            "description": "template2"
+        },
         "hint": {
             "factory": "./hint",
             "description": "hint",
