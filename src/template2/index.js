@@ -14,7 +14,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var schematics_1 = require("@angular-devkit/schematics");
 var core_1 = require("@angular-devkit/core");
 function default_1() {
-    return function (tree) {
+    return function (tree, context) {
         return (0, schematics_1.chain)([
             (0, schematics_1.mergeWith)((0, schematics_1.apply)((0, schematics_1.url)('./template'), [
                 (0, schematics_1.template)(__assign(__assign({}, core_1.strings), { name: 'testClass' })),

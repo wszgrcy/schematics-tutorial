@@ -54,6 +54,10 @@
         "rule2": {
             "factory": "./rule2",
             "description": "rule2"
+        },
+        "ts-compiler-tsconfig": {
+            "factory": "./ts-compiler-tsconfig",
+            "description": "ts-compiler-tsconfig"
         }
     }
 }
