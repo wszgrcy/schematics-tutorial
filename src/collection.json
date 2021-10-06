@@ -58,6 +58,10 @@
         "ts-compiler-tsconfig": {
             "factory": "./ts-compiler-tsconfig",
             "description": "ts-compiler-tsconfig"
+        },
+        "ts-program": {
+            "factory": "./ts-program",
+            "description": "ts-program"
         }
     }
 }
