@@ -1,6 +1,6 @@
 import { Tree } from '@angular-devkit/schematics';
 import * as fs from 'fs';
-import ts from 'typescript';
+import ts, { ExpressionStatement, factory } from 'typescript';
 import { SchematicsTsconfigHost } from './ts-parsed-config';
 
 export default function () {
@@ -20,6 +20,9 @@ export default function () {
       return tree.exists(filePath);
     };
     host.directoryExists = (filePath: string) => {
+      if (filePath.includes('node_modules')) {
+        return false;
+      }
       try {
         let dir = tree.getDir(filePath);
         return !!dir.subdirs.length || !!dir.subfiles.length;
@@ -35,5 +38,42 @@ export default function () {
       .filter((sf) => !sf.isDeclarationFile)
       .filter((sf) => !sf.fileName.includes('node_modules'));
     list;
+    let sf = program.getSourceFile('test.ts')!;
+    let statement = sf?.statements[0]!;
+    console.log(ts.SyntaxKind[statement.kind]);
+
+    if (ts.isExpressionStatement(statement)) {
+      console.log('是VariableStatement');
+
+      let node = (statement as any as ExpressionStatement).expression;
+      if (ts.isBinaryExpression(node)) {
+        // sf=ts.createSourceFile(sf.fileName,sf.text,sf.languageVersion,true)
+        // 正常更新节点
+        // let value = factory.createNumericLiteral(456789);
+        // // let originNode=node
+        // node = factory.updateVariableDeclaration(node, node.name, node.exclamationToken, node.type, value);
+        // let printer = ts.createPrinter();
+        // let nodeString = printer.printNode(ts.EmitHint.Unspecified, node, sf);
+        // console.log(nodeString);
+        // let recorder = tree.beginUpdate('test.ts');
+        // recorder.remove(node.pos + 1, node.end - (node.pos + 1));
+        // recorder.insertLeft(node.pos + 1, nodeString);
+        // tree.commitUpdate(recorder);
+        // let file = tree.read('test.ts')?.toString();
+        // console.log('内容', file);
+        // 注释
+        let checker = program.getTypeChecker();
+        // node = ts.addSyntheticLeadingComment(node, ts.SyntaxKind.MultiLineCommentTrivia, '这是一个注释', false);
+        let printer = ts.createPrinter();
+        // let nodeString = printer.printNode(ts.EmitHint.Unspecified, node, sf);
+        // console.log(nodeString);
+        
+      // let comments=  ts.getSyntheticLeadingComments(node)
+        // console.log(comments);
+     let comment=   ts.getLeadingCommentRanges(sf.getFullText(),node.getFullStart())
+  
+     comment
+      }
+    }
   };
 }
