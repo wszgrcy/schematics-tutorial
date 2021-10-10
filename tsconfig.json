@@ -91,6 +91,9 @@
     "skipLibCheck": true /* Skip type checking all .d.ts files. */
   },
   "exclude": [
-    "**/template/**/*"
+    "**/template/**/*",
+    "**/*.spec.ts",
+    "jest.config.ts",
+    "test.ts"
   ]
 }
