@@ -39,14 +39,14 @@ export default function () {
       .filter((sf) => !sf.fileName.includes('node_modules'));
     list;
     let sf = program.getSourceFile('test.ts')!;
-    let statement = sf?.statements[0]!;
+    let statement = sf?.statements[1]!;
     console.log(ts.SyntaxKind[statement.kind]);
 
     if (ts.isExpressionStatement(statement)) {
       console.log('是VariableStatement');
 
-      let node = (statement as any as ExpressionStatement).expression;
-      if (ts.isBinaryExpression(node)) {
+      let node = (statement.expression as ts.PropertyAccessExpression).expression;
+      if (ts.isIdentifier(node)) {
         // sf=ts.createSourceFile(sf.fileName,sf.text,sf.languageVersion,true)
         // 正常更新节点
         // let value = factory.createNumericLiteral(456789);
@@ -62,17 +62,26 @@ export default function () {
         // let file = tree.read('test.ts')?.toString();
         // console.log('内容', file);
         // 注释
-        let checker = program.getTypeChecker();
+        // let checker = program.getTypeChecker();
         // node = ts.addSyntheticLeadingComment(node, ts.SyntaxKind.MultiLineCommentTrivia, '这是一个注释', false);
-        let printer = ts.createPrinter();
+        // let printer = ts.createPrinter();
         // let nodeString = printer.printNode(ts.EmitHint.Unspecified, node, sf);
         // console.log(nodeString);
-        
-      // let comments=  ts.getSyntheticLeadingComments(node)
+
+        // let comments=  ts.getSyntheticLeadingComments(node)
         // console.log(comments);
-     let comment=   ts.getLeadingCommentRanges(sf.getFullText(),node.getFullStart())
-  
-     comment
+        //  let comment=   ts.getLeadingCommentRanges(sf.getFullText(),node.getFullStart())
+
+        //  comment
+        // 检查标识符类型
+        let checker = program.getTypeChecker();
+        // let type = checker.getTypeAtLocation(node);
+        // console.log(checker.typeToString(type));
+        // 检查表示来源
+        let symbol = checker.getSymbolAtLocation(node);
+        let declarationNode = symbol?.declarations![0];
+        console.log(ts.SyntaxKind[declarationNode?.kind!]);
+        
       }
     }
   };
